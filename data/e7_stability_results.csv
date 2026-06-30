@@ -1,0 +1,13 @@
+model_name,model_family,vocab_size,n_runs,cv_lambda_max,passes_stability_gate
+qwen2.5-coder:7b,Qwen,,,0.002,True
+qwen:latest,Qwen,,,0.0001,True
+gemma4:latest,Gemma,,,0.0023,True
+huihui_ai/hunyuan-mt-abliterated:latest,Hunyuan,,,0.5095,False
+qwen3:32b,Qwen,,,0.0902,True
+gemma3:27b,Gemma,,,0.1211,True
+llama3.1:latest,Llama,,,0.0001,True
+deepseek-r1:latest,Phi/DeepSeek-derived,,,0.0761,True
+phi4-mini:latest,Phi/DeepSeek-derived,,,0.1117,True
+gemma3:latest,Gemma,,,0.3008,False
+llama3.2:latest,Llama,,,0.0038,True
+coney_/gpt-oss_claude-sonnet4.6:latest,GPT-OSS-derived,,,0.1672,True

@@ -1,0 +1,84 @@
+{
+  "tau_theory": 0.065,
+  "tau_theory_note": "Set by visual inspection of a small (n=3) model sample in May 2026; flagged as warranting independent scrutiny.",
+  "excluded_models": {
+    "deepseek-r1:latest": "all 20 measurements returned exactly 0.0 -- response-parsing artifact, not a genuine measurement",
+    "gemma4:latest": "all 20 measurements returned exactly 0.0 -- response-parsing artifact, not a genuine measurement"
+  },
+  "original_2026_05_16_run": {
+    "model": "llama3.2:latest",
+    "kl_p50": 1.36979,
+    "kl_p95": 15.9037,
+    "kl_p99": 15.9037,
+    "n": 20,
+    "note": "Original single-model run whose raw per-sample kl_values array was not retained (predates that field being added to the validation script). Aggregate statistics only."
+  },
+  "per_model_pooled": {
+    "alibayram/hunyuan:latest": {
+      "n": 20,
+      "kl_p50": 4.8666,
+      "kl_p95": 9.02,
+      "kl_p99": null,
+      "drift_factor_p95": 138.8
+    },
+    "coney_/gpt-oss_claude-sonnet4.6:latest": {
+      "n": 20,
+      "kl_p50": 0.0,
+      "kl_p95": 18.4462,
+      "kl_p99": null,
+      "drift_factor_p95": 283.8
+    },
+    "gemma3:27b": {
+      "n": 60,
+      "kl_p50": 0.5099,
+      "kl_p95": 4.1764,
+      "kl_p99": null,
+      "drift_factor_p95": 64.3
+    },
+    "gemma3:latest": {
+      "n": 117,
+      "kl_p50": 1.0791,
+      "kl_p95": 6.7621,
+      "kl_p99": 11.3286,
+      "drift_factor_p95": 104.0
+    },
+    "llama3.2:latest": {
+      "n": 120,
+      "kl_p50": 0.6656,
+      "kl_p95": 15.3945,
+      "kl_p99": 18.4207,
+      "drift_factor_p95": 236.8
+    },
+    "phi4-mini:latest": {
+      "n": 20,
+      "kl_p50": 3.1285,
+      "kl_p95": 4.5496,
+      "kl_p99": null,
+      "drift_factor_p95": 70.0
+    },
+    "qwen2.5-coder:7b": {
+      "n": 20,
+      "kl_p50": 0.9706,
+      "kl_p95": 18.6785,
+      "kl_p99": null,
+      "drift_factor_p95": 287.4
+    },
+    "qwen:latest": {
+      "n": 20,
+      "kl_p50": 2.7168,
+      "kl_p95": 8.6029,
+      "kl_p99": null,
+      "drift_factor_p95": 132.4
+    }
+  },
+  "overall_pooled": {
+    "n": 397,
+    "n_models": 8,
+    "kl_mean": 2.3676,
+    "kl_std": 3.7601,
+    "kl_p50": 1.0818,
+    "kl_p95": 8.4441,
+    "kl_p99": 18.4296,
+    "drift_factor_p95": 129.9
+  }
+}

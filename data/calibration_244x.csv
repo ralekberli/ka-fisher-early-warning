@@ -1,0 +1,2 @@
+hardware,quantization,kl_threshold_theoretical,kl_threshold_measured_p95,drift_factor,n_models,n_measurements
+Apple M5 32GB,Q4_K_M,0.065,8.4441,129.9,8,397

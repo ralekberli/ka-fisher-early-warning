@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite both the paper and, where appropriate, this repository's Zenodo archive."
+title: "K–A Fisher Early-Warning: Validation Code & Data"
+type: software
+authors:
+  - family-names: "Alekberli"
+    given-names: "Rahid Zahid"
+    orcid: "https://orcid.org/0000-0003-2332-9944"
+    affiliation: "Institute of Defense Technologies and Cybersecurity Research, Azerbaijan Technical University"
+  - family-names: "Karimov"
+    given-names: "Hikmat"
+    orcid: "https://orcid.org/0009-0002-4146-8913"
+    affiliation: "Institute of Defense Technologies and Cybersecurity Research, Azerbaijan Technical University"
+repository-code: "https://github.com/ralekberli/ka-fisher-early-warning"
+license: MIT
+version: 1.0.0
+date-released: "2026-06-30"
+preferred-citation:
+  type: article
+  title: "Runtime Fisher Spectral Sensitivity for Early Hallucination Detection in Edge-Deployed Language Models"
+  authors:
+    - family-names: "Alekberli"
+      given-names: "Rahid Zahid"
+      orcid: "https://orcid.org/0000-0003-2332-9944"
+    - family-names: "Karimov"
+      given-names: "Hikmat"
+      orcid: "https://orcid.org/0009-0002-4146-8913"
+  year: 2026
+  journal: "arXiv preprint"
+  identifiers:
+    - type: other
+      value: "arXiv:2606.XXXXX"
+      description: "arXiv preprint identifier (update once announced)"

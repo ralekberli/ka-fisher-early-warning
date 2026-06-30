@@ -1,0 +1,11 @@
+model_name,decoding_mode,pearson_r,p_value,n_samples,oracle_circularity_flag,note
+qwen2.5-coder:7b,think:false,0.6326,,,True,
+qwen:latest,think:false,0.4331,,,True,
+gemma4:latest,think:false,-0.2588,,,True,
+gemma3:27b,think:false,0.6237,,,True,
+llama3.1:latest,think:false,-0.1779,,,True,
+deepseek-r1:latest,think:true (excluded),,,,True,"constant waste — thinking mode, excluded"
+phi4-mini:latest,think:false,0.5303,,,True,
+llama3.2:latest,think:false,-0.0028,,,True,
+coney_/gpt-oss_claude-sonnet4.6:latest,think:false,0.4786,,,True,
+qwen3:32b,think:false,0.9615475583515125,,,True,Rerun with think:false — metric overflow fixed
