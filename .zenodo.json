@@ -27,7 +27,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "10.48550/arXiv.2606.XXXXX",
+      "identifier": "10.5281/zenodo.21133067",
       "relation": "isSupplementTo",
       "resource_type": "publication-preprint"
     },
@@ -37,5 +37,5 @@
       "resource_type": "publication-preprint"
     }
   ],
-  "notes": "NOTE: replace arXiv.2606.XXXXX with the announced ID for submit/7759124 once it leaves moderation, both here and in README.md / CITATION.cff."
+  "notes": "The empirical paper (companion to this repository) is archived on Zenodo (see related_identifiers) while under peer review."
 }
