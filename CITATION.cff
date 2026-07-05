@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software or data, please cite both the paper and, where appropriate, this repository's Zenodo archive."
+message: "If you use this software or data, please cite both the paper and this repository's Zenodo archive."
 title: "K–A Fisher Early-Warning: Validation Code & Data"
 type: software
 authors:
@@ -12,9 +12,10 @@ authors:
     orcid: "https://orcid.org/0009-0002-4146-8913"
     affiliation: "Institute of Defense Technologies and Cybersecurity Research, Azerbaijan Technical University"
 repository-code: "https://github.com/ralekberli/ka-fisher-early-warning"
+doi: 10.5281/zenodo.21134196
 license: MIT
-version: 1.0.0
-date-released: "2026-06-30"
+version: 1.0.3
+date-released: "2026-07-02"
 preferred-citation:
   type: article
   title: "Runtime Fisher Spectral Sensitivity for Early Hallucination Detection in Edge-Deployed Language Models"
@@ -26,8 +27,7 @@ preferred-citation:
       given-names: "Hikmat"
       orcid: "https://orcid.org/0009-0002-4146-8913"
   year: 2026
-  journal: "arXiv preprint"
-  identifiers:
-    - type: other
-      value: "arXiv:2606.XXXXX"
-      description: "arXiv preprint identifier (update once announced)"
+  publisher:
+    name: "Zenodo"
+  doi: "10.5281/zenodo.21133067"
+  notes: "Preprint. Peer-reviewed submission is planned but has not yet occurred."
