@@ -1,15 +1,18 @@
 # K–A Fisher Early-Warning: Validation Code & Data
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.PLACEHOLDER.svg)](https://doi.org/10.5281/zenodo.PLACEHOLDER)
-[![arXiv](https://img.shields.io/badge/arXiv-2606.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2606.XXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21134196.svg)](https://doi.org/10.5281/zenodo.21134196)
+[![Preprint](https://img.shields.io/badge/preprint-Zenodo-blue.svg)](https://doi.org/10.5281/zenodo.21133067)
+[![arXiv](https://img.shields.io/badge/arXiv-2606.28432-b31b1b.svg)](https://arxiv.org/abs/2606.28432)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC--BY--4.0-lightgrey.svg)](LICENSE-DATA)
 
 Code, validation logs, and per-model trajectory data supporting:
 
-> R. Z. Alekberli and H. Karimov, "Runtime Fisher Spectral Sensitivity for Early Hallucination Detection in Edge-Deployed Language Models," arXiv:2606.XXXXX, 2026.
+> R. Z. Alekberli and H. Karimov, "Runtime Fisher Spectral Sensitivity for Early Hallucination Detection in Edge-Deployed Language Models," preprint, Zenodo, 2026. https://doi.org/10.5281/zenodo.21133067
 
-This repository is the companion data/code release referenced in the paper's Reproducibility section. It implements a model-agnostic, top-K-constrained approximation to the spectral sensitivity of the per-token empirical Fisher Information Matrix, $\lambda_{\max}(\hat F_t)$, used as a runtime early-warning signal for hallucination during autoregressive decoding on consumer edge hardware (tested on Apple M5 Silicon via [Ollama](https://ollama.com) and [MLX](https://github.com/ml-explore/mlx)).
+A companion theoretical paper by the same authors is available on arXiv: R. Z. Alekberli and H. Karimov, "Spectral Perturbation of the Empirical Fisher Information Matrix under Weight Quantization," [arXiv:2606.28432](https://arxiv.org/abs/2606.28432), 2026.
+
+This repository is the companion data/code release referenced in the empirical paper's Reproducibility section. It implements a model-agnostic, top-K-constrained approximation to the spectral sensitivity of the per-token empirical Fisher Information Matrix, $\lambda_{\max}(\hat F_t)$, used as a runtime early-warning signal for hallucination during autoregressive decoding on consumer edge hardware (tested on Apple M5 Silicon via [Ollama](https://ollama.com) and [MLX](https://github.com/ml-explore/mlx)).
 
 ## What is in this repository
 
@@ -27,7 +30,7 @@ This repository is the companion data/code release referenced in the paper's Rep
 | Correlation | Strongest single-model correlation, qwen3:32b (non-thinking) | r = 0.962 (upper bound — see [Known Limitations](docs/known_limitations.md)) |
 | Early Warning | 27-token median lead time before hallucination onset, 85.6% detection | t = 33.2, p = 2.2 × 10⁻¹¹⁴ |
 | Intervention | 66% reduction in post-onset tokens, quality-preserving | Cohen's d = 1.95 |
-| Calibration drift | Pooled 130× gap (range 64×–287× across 8 models, n=397 measurements) between theoretical and measured KL-divergence threshold under 4-bit quantization | see `data/calibration_244x.csv` and `data/calibration_244x_recovered_summary.json` |
+| Calibration drift | 244× gap between theoretical and measured KL-divergence threshold under 4-bit quantization (llama3.2, corroborated by a 237× estimate across 120 repeated measurements on the same model) | see `data/calibration_244x.csv`; multi-model robustness check across 8 models in `data/calibration_244x_recovered_summary.json` |
 
 ## Quickstart
 
@@ -60,26 +63,36 @@ This release accompanies an empirical paper that is intentionally transparent ab
 
 - The E1 correlation figures use an entropy-based hallucination-onset label that shares functional dependence with the signal itself. We report this explicitly as an **oracle-circularity caveat** — see [`docs/known_limitations.md`](docs/known_limitations.md) — and treat the headline r = 0.962 as an upper bound, not a general estimate of predictive strength.
 - A separate, negative result (resampling-based correction did not reduce hallucination rate) is included for completeness, not omitted.
-- All measurements come from a single hardware platform (Apple M5, 32GB, Q4_K_M quantization). The pooled 130× calibration gap (range 64×–287× across 8 models) is reported as a demonstration that such drift can be large and is itself model-dependent, not as a universal constant. Two models (deepseek-r1, gemma4) were excluded from this analysis due to a measurement artifact — see `docs/known_limitations.md`.
+- All measurements come from a single hardware platform (Apple M5, 32GB, Q4_K_M quantization). The reported 244× calibration gap (llama3.2) is corroborated by 120 repeated measurements on the same model (237×) and falls within a 64×–287× range observed across a broader 8-model robustness check — see `docs/known_limitations.md` for the full breakdown, including two models excluded due to a measurement artifact.
+- The empirical paper is currently available as a preprint (Zenodo DOI above); peer-reviewed submission is planned but has not yet occurred.
 
 We would rather this repository under-claim than over-claim. Issues and replications on other hardware are very welcome.
 
 ## Citation
 
-If you use this code or data, please cite the paper (see [`CITATION.cff`](CITATION.cff)):
+If you use this code or data, please cite both the paper and this repository:
 
 ```bibtex
-@misc{alekberli2026runtime,
-  title         = {Runtime Fisher Spectral Sensitivity for Early Hallucination Detection in Edge-Deployed Language Models},
-  author        = {Alekberli, Rahid Zahid and Karimov, Hikmat},
-  year          = {2026},
-  eprint        = {2606.XXXXX},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.AI}
+@misc{alekberli2026runtime_paper,
+  title     = {Runtime Fisher Spectral Sensitivity for Early Hallucination Detection in Edge-Deployed Language Models},
+  author    = {Alekberli, Rahid Zahid and Karimov, Hikmat},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21133067},
+  note      = {Preprint}
+}
+
+@misc{alekberli2026runtime_code,
+  title     = {K–A Fisher Early-Warning: Validation Code \& Data},
+  author    = {Alekberli, Rahid Zahid and Karimov, Hikmat},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21134196},
+  note      = {Code and data release, v1.0.3}
 }
 ```
 
-This repository itself is also archived with its own DOI via Zenodo (see badge above); please cite the Zenodo DOI if referring specifically to the code/data release rather than the paper.
+See also [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
 
 ## License
 
